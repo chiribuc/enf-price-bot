@@ -9,9 +9,7 @@ const bot = new TelegramBot(token, { polling: true });
 // Function to get the ENF token price from MEXC
 async function getENFPrice() {
   try {
-    const response = await fetch('https://api.mexc.com/api/v3/ticker/price?symbol=ENFUSDT', {
-      timeout: 10000, // 10 seconds timeout
-    });
+    const response = await fetch('https://api.mexc.com/api/v3/ticker/price?symbol=ENFUSDT');
 
     if (!response.ok) {
       console.error('Network response was not ok:', response.statusText);
